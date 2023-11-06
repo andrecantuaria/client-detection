@@ -126,6 +126,13 @@ function setWindowOrientation() {
     }
   }
 
+  function updateOrientation() {
+    const orientation = setWindowOrientation();
+    windowOrientation.textContent = orientation;
+  }
+
+  onEvent('resize', window, updateOrientation);
+
   onEvent('load', window, () => {
     const orientation = setWindowOrientation();
     windowOrientation.textContent = orientation;
