@@ -1,7 +1,6 @@
 'use strict';
  
 // Utility functions
-
 function onEvent(event, selector, callback) {
  return selector.addEventListener(event, callback);
 }
@@ -19,16 +18,11 @@ function print(...args) {
 }
 
 // Main Code
-
 // SYSTEM 
 const operatingSystem = selectById('operating-system');
 const systemLanguage = selectById('system-language');
 const browserName = selectById('browser-name');
 
-//Operation System
-// Note to professor: First I used only 'navigator.userAgent'
-//but I got a huge name. I researched and I decided to use
-// the 'switch' to simplify the name.
 
 function getOperationSystem() {
     const userAgent = navigator.userAgent;
@@ -61,7 +55,7 @@ onEvent('load', window, () => {
     getOperationSystem();
 })
 
-//System Language
+// System Language
 function getSystemLanguage() {
     systemLanguage.innerText = `Language: ${navigator.language}`;
 }
@@ -70,8 +64,7 @@ onEvent('load', window, () => {
     getSystemLanguage();
 })
 
-//Browser
-
+// Browser
 function getBrowserName() {
     function getOperatingSystem() {
         const userAgent = navigator.userAgent;
@@ -104,7 +97,6 @@ function getBrowserName() {
 onEvent('load', window, () => {
     getBrowserName();
 });
-
 
 // WINDOW 
 //window width and height
@@ -140,14 +132,10 @@ function setWindowOrientation() {
   });
 
   // BATTERY
-
   // Battery Level
-
   const batteryLevel = selectById('battery-level');
   const batteryStatus = selectById('battery-status');
   
-  //Note to professor: I had to research to finish this function
-  // first I did a simple function without the const 'batteryPorcentage'.
   function getBatteryLevel() {
     if ('getBattery' in navigator) {
       navigator.getBattery().then(function(battery) {
@@ -188,7 +176,6 @@ function setWindowOrientation() {
   });
 
   // Network status
-
   const networkStatus = selectById('network-status');
   const statusCell = select('.status-cell');
 
@@ -210,7 +197,6 @@ function setWindowOrientation() {
       const status = getNetworkStatus();
       networkStatus.textContent = status;
   });
-
 
 // print tests
 print(navigator.userAgent)
