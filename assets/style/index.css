@@ -1,0 +1,80 @@
+@charset "utf=8";
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* Page */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+:root {
+    --app-white: #fff;
+    --app-bg-dark: #191720;
+    --app-red: #e6364e;
+    --app-dark-gray: #26232b;
+    --app-green: #33ab4e;
+}
+    
+body {
+    background-color: var(--app-bg-dark);
+    font-family: 'Nunito Sans', 'Open Sans', Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    text-rendering: geometricPrecision;
+    overflow:auto;
+}
+
+.container {
+    width: min(100% - 30px, 1080px);
+    margin-inline: auto;
+}
+
+.center {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--app-white);
+    letter-spacing: 0.2px;
+}
+
+p {
+    font-size:14px;
+    font-weight: 400;
+    color: var(--app-white);
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* GRID */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.grid-container {
+    width: 250px;
+    margin: 0 auto;
+    padding: 0;
+}
+  
+.cell-title {
+    border-radius: 5px 5px 0 0;
+    background-color: var(--app-dark-gray);
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: baseline;
+}
+  
+.cell-content {
+    padding: 5px 10px;
+    border: 1px solid var(--app-dark-gray);
+}
+
+.status-cell {
+    border-radius: 5px;
+    background-color: var(--app-green);
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: baseline;
+}
